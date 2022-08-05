@@ -1,0 +1,40 @@
+from tkinter import *
+from PIL import Image,ImageTk
+
+#Khoi tao giao dien gui
+tk=Tk()
+tk.title("robot_cohoa")
+tk.geometry("715x500+0+0")
+tk.resizable(0,0)
+tk.configure(background="white")
+
+lb01=Label(tk,fg="green",bg="white",font="Times 18",text=content1)
+lb01.pack()
+lb01.place(x=220,y=10)
+
+
+def bt_fc():
+   global bangtai_state
+   print( "off")
+   bangtai_state = 0
+
+BT = Button(tk, text ="Start",bg = "green",height = 2, command = bt_fc)
+BT.pack()
+BT.place(x=280,y=370)
+
+
+Slider = Scale(tk, from_=0, to=255,orient=HORIZONTAL, length=223)
+Slider.set(0)
+Slider.pack()
+Slider.place(x=10,y=280)
+
+#Slider.get()
+#Slider.set(0)
+
+combox1 = ttk.Combobox(tk, values=["a", "b","c","d"])
+combox1.pack()
+combox1.place(x=10,y=73)
+
+tk.update()
+
+tk.destroy()
